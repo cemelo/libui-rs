@@ -83,6 +83,21 @@ impl Window {
         }
     }
 
+    pub fn position(&mut self, _ctx: &UI) -> (i32, i32) {
+        let mut x = 0;
+        let mut y = 0;
+
+        unsafe {
+            ui_sys::uiWindowPosition(self.uiWindow, &mut x, &mut y)
+        }
+    }
+
+    pub fn set_position(&mut self, _ctx: &UI, x: i32, y: i32) {
+        unsafe {
+            ui_sys::uiWindowSetPosition(self.uiWindow, x, y)
+        }
+    }
+
     /// Set a callback to be run when the window closes.
     ///
     /// This is often used on the main window of an application to quit
