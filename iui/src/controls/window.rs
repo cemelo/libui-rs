@@ -100,6 +100,12 @@ impl Window {
         }
     }
 
+    pub fn center(&mut self) {
+        unsafe {
+            ui_sys::uiWindowCenter(self.uiWindow)
+        }
+    }
+
     /// Set a callback to be run when the window closes.
     ///
     /// This is often used on the main window of an application to quit
