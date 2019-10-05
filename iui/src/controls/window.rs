@@ -88,8 +88,10 @@ impl Window {
         let mut y = 0;
 
         unsafe {
-            ui_sys::uiWindowPosition(self.uiWindow, &mut x, &mut y)
+            ui_sys::uiWindowPosition(self.uiWindow, &mut x, &mut y);
         }
+
+        (x, y)
     }
 
     pub fn set_position(&mut self, _ctx: &UI, x: i32, y: i32) {
