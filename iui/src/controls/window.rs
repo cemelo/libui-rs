@@ -100,7 +100,7 @@ impl Window {
         }
     }
 
-    pub fn center(&mut self) {
+    pub fn center(&mut self, _ctx: &UI) {
         unsafe {
             ui_sys::uiWindowCenter(self.uiWindow)
         }
